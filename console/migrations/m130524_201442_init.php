@@ -15,8 +15,8 @@ class m130524_201442_init extends Migration
             'email' => $this->string()->notNull()->unique(),
             'verification_token' => $this->string()->defaultValue(null),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
+            'created_at' => 'timestamp without time zone NOT NULL DEFAULT NOW()',
+            'updated_at' => 'timestamp without time zone NOT NULL DEFAULT NOW()',
         ]);
     }
 
